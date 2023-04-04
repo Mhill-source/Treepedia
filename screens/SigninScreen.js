@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { TextInput } from "react-native-gesture-handler";
+import { StatusBar } from "react-native";
 
 const SigninScreen = () => {
   const [userEmail, setUserEmail] = useState("");
@@ -36,6 +37,11 @@ const SigninScreen = () => {
             secureTextEntry
           />
         </View>
+        <View>
+          <TouchableOpacity>
+            <Text style={styles.ForgotPasswordText}>Forgot Password ?</Text>
+          </TouchableOpacity>
+        </View>
         <TouchableOpacity style={styles.Button}>
           <Text style={styles.SigninbuttonText}>Sign In</Text>
         </TouchableOpacity>
@@ -51,7 +57,7 @@ const styles = StyleSheet.create({
     fontSize: 50,
     fontFamily: "Avenir-Medium",
     color: "#0A3229",
-    marginTop: 90,
+    marginTop: 70,
     marginLeft: 15,
   },
   EmailText: {
@@ -96,5 +102,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 30,
+  },
+  ForgotPasswordText: {
+    fontFamily: "Avenir-Regular",
+    fontSize: 18,
+    marginTop: 15,
+    alignSelf: "center",
   },
 });
