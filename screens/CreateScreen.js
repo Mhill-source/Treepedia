@@ -48,7 +48,7 @@ const CreateScreen = () => {
           />
         </View>
         <TouchableOpacity style={styles.Button}>
-          <Text style={styles.SigninbuttonText}>Sign In</Text>
+          <Text style={styles.SigninbuttonText}>Create Account</Text>
         </TouchableOpacity>
       </KeyboardAvoidingView>
     </SafeAreaView>
