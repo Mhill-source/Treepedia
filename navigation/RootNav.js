@@ -5,6 +5,7 @@ import WelcomeScreen from "../screens/WelcomeScreen";
 import SigninScreen from "../screens/SigninScreen";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import CreateScreen from "../screens/CreateScreen";
 
 const Stack = createStackNavigator();
 
@@ -35,6 +36,11 @@ const RootNav = () => {
         name="Signin"
         component={SigninScreen}
         options={{ headerShown: true, title: "Sign In" }}
+      />
+      <Stack.Screen
+        name="CreateScreen"
+        component={CreateScreen}
+        options={{ headerShown: true, title: "Create an Account" }}
       />
     </Stack.Navigator>
   );

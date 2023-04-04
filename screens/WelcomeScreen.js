@@ -22,7 +22,11 @@ export default function WelcomeScreen() {
       >
         <Text style={styles.SigninText}>Sign in</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigate("CreateScreen");
+        }}
+      >
         <Text style={styles.CreateaccountText}>Create an Account</Text>
       </TouchableOpacity>
     </SafeAreaView>
