@@ -6,6 +6,8 @@ import SigninScreen from "../screens/SigninScreen";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import CreateScreen from "../screens/CreateScreen";
+import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
+import HomeScreen from "../screens/HomeScreen";
 
 const Stack = createStackNavigator();
 
@@ -40,7 +42,21 @@ const RootNav = () => {
       <Stack.Screen
         name="CreateScreen"
         component={CreateScreen}
-        options={{ headerShown: true, title: "Create an Account" }}
+        options={{
+          headerShown: true,
+          title: "Create an Account",
+          presentation: "modal",
+        }}
+      />
+      <Stack.Screen
+        name="ForgotPasswordScreen"
+        component={ForgotPasswordScreen}
+        options={{ headerShown: true, title: "Forgot Password" }}
+      />
+      <Stack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{ headerShown: false, title: "Home" }}
       />
     </Stack.Navigator>
   );

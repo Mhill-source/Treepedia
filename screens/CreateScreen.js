@@ -5,52 +5,62 @@ import {
   StyleSheet,
   KeyboardAvoidingView,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import React, { useState } from "react";
 import { TextInput } from "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
+import { useNavigation } from "@react-navigation/native";
 
 const CreateScreen = () => {
   const [userFullName, setUserFullName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [UserPassword, setUserPassword] = useState("");
+  const { navigate } = useNavigation();
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
       <StatusBar style="auto" />
-      <View>
-        <Text style={styles.CreateAccountText}>Create an Account</Text>
-      </View>
-      <KeyboardAvoidingView>
-        <View style={{ padding: 16 }}>
-          <Text style={styles.FullNameText}>Full Name</Text>
-          <TextInput
-            onChangeText={(e) => setUserFullName(e)}
-            placeholder="Enter Your Full Name Here"
-            style={styles.FullNameInput}
-          />
+      <ScrollView style={{ paddingBottom: 32 }}>
+        <View>
+          <Text style={styles.CreateAccountText}>Create an Account</Text>
         </View>
-        <View style={{ padding: 16 }}>
-          <Text style={styles.EmailText}>Email</Text>
-          <TextInput
-            onChangeText={(e) => setUserEmail(e)}
-            placeholder="Enter Your Email Here"
-            style={styles.EmailInput}
-          />
-        </View>
-        <View style={{ padding: 16 }}>
-          <Text style={styles.PasswordText}>Password</Text>
-          <TextInput
-            onChangeText={(e) => setUserPassword(e)}
-            placeholder="Enter Your Password Here"
-            style={styles.PasswordInput}
-            secureTextEntry
-          />
-        </View>
-        <TouchableOpacity style={styles.Button}>
-          <Text style={styles.SigninbuttonText}>Create Account</Text>
-        </TouchableOpacity>
-      </KeyboardAvoidingView>
+        <KeyboardAvoidingView>
+          <View style={{ padding: 16 }}>
+            <Text style={styles.FullNameText}>Full Name</Text>
+            <TextInput
+              onChangeText={(e) => setUserFullName(e)}
+              placeholder="Enter Your Full Name Here"
+              style={styles.FullNameInput}
+            />
+          </View>
+          <View style={{ padding: 16 }}>
+            <Text style={styles.EmailText}>Email</Text>
+            <TextInput
+              onChangeText={(e) => setUserEmail(e)}
+              placeholder="Enter Your Email Here"
+              style={styles.EmailInput}
+            />
+          </View>
+          <View style={{ padding: 16 }}>
+            <Text style={styles.PasswordText}>Password</Text>
+            <TextInput
+              onChangeText={(e) => setUserPassword(e)}
+              placeholder="Enter Your Password Here"
+              style={styles.PasswordInput}
+              secureTextEntry
+            />
+          </View>
+          <TouchableOpacity
+            onPress={() => {
+              navigate("Signin");
+            }}
+            style={styles.Button}
+          >
+            <Text style={styles.SigninbuttonText}>Create Account</Text>
+          </TouchableOpacity>
+        </KeyboardAvoidingView>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -74,7 +84,7 @@ const styles = StyleSheet.create({
   },
   FullNameInput: {
     borderWidth: 1,
-    height: 40,
+    height: 50,
     borderRadius: 10,
     borderColor: "#80B435",
     padding: 10,
@@ -88,7 +98,7 @@ const styles = StyleSheet.create({
   },
   EmailInput: {
     borderWidth: 1,
-    height: 40,
+    height: 50,
     borderRadius: 10,
     borderColor: "#80B435",
     padding: 10,
@@ -117,7 +127,7 @@ const styles = StyleSheet.create({
   },
   PasswordInput: {
     borderWidth: 1,
-    height: 40,
+    height: 50,
     borderRadius: 10,
     borderColor: "#80B435",
     padding: 10,
