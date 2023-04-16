@@ -50,7 +50,7 @@ const SigninScreen = () => {
         </View>
         <TouchableOpacity
           onPress={() => {
-            navigate("HomeScreen");
+            navigate("TabNav");
           }}
           style={styles.Button}
         >
